@@ -1,0 +1,36 @@
+$(document).ready(function() {
+
+	/**
+	 * ajax
+	 */
+	function ajax(method, remote_url, send_data, callback) {
+		$.ajax({
+			type : method,
+			url : remote_url,
+			data : send_data,
+			dataType : 'json',
+			success : function(result) {
+				if (result == "" || result == null) {
+					alert("后台错误");
+				} else {
+					//callback(result); 
+					alert("成功");
+				}
+			},
+			error : function(xhr, textStatus, errorThrown) {
+				alert("网络错误");
+			}
+
+		});
+	}
+
+	
+	$("input[id='test']").click(function(){
+		alert("测试");
+		var jsonArray = "[{'userName':'you','password':'123'},{'userName':'hey','password':'456'}]";
+		var send_data = {"data":jsonArray};
+		var remote_url = "/JEE/servlet/LoginServlet";
+		ajax("POST",remote_url,send_data,null);
+	});
+	
+});
