@@ -15,6 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+/**
+ * loginServlet
+ * @author YOU
+ *
+ */
 public class LoginServlet extends HttpServlet {
 
 	/**
